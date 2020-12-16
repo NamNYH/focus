@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/*-...........................................Mua vé ....................................................-*/
+.nam {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+#Thanhtoan,#Thanhtien {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#Thanhtoan:hover {
+  background-color: #45a049;
+}
+
+.buy_ticket {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+/* tiêu đề bảng */
+.ex {
+  background-color: #7FFFD4;
+}
+</style>
+</head>
+<body>
+
+<!--  Mua Vé -->
+    <div id="BuyTicket" class="tabcontent">
+     <div id="clock"></div>
+            <h3>Quý khách vui lòng cho biết thông tin</h3>
+            <div class="buy_ticket">
+              <form action="">
+                <label for="name">Họ Tên</label>
+                <input type="text" id="name_email" name="name" placeholder="Nhập tên của bạn" class="nam">
+
+                <label for="email">Email</label>
+                <input type="text" id="name_email" name="email" placeholder="Email của bạn : xyz@gmail.com" class="nam">
+                <label for="sđt">SĐT</label>
+                <input type="text" id="name_email" name="phone" placeholder="Số điện thoại của bạn" class="nam">
+                <label for="Soluongg">Số Lượng</label>
+                <input type="number" id="number" name="soluong" min="0" class="nam"><br />
+				<label for="ticket">Giá vé</label>
+                <input type="text" id="dongia" name="ve" value="5000" class="nam" readonly><br />
+                <label for="ticket">Tổng Tiền</label>
+                <input type="text" id="tien" name="ve" value="" class="nam"  readonly><br />
+                <label for="ticket">Loại vé</label>
+                <input type="text" id="ve" name="ve" value="Vé ngày" class="nam" readonly><br />
+                <input type="submit" value="Thanh Toán" id="Thanhtoan">
+                <button id="Thanhtien" type='button' onclick="myFunction()">Thành tiền</button>
+              </form>
+            </div>
+    </div>
+    <!-- End mua vé -->
+    
+    <script>
+	function myFunction() {
+    	
+        document.getElementById("tien").value = document.getElementById("number").value * document.getElementById("dongia").value;
+    }
+ </script>
+
+</body>
+</html>
